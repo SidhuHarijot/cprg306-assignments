@@ -1,10 +1,10 @@
 
-export default function Item(Prop){
+export default function Item(item){
     return (
         <div>
             <ul>
-                <li>{Prop.name}</li>
-                <li>Buy {Prop.quantity} in {Prop.category}</li>
+                <li >{item.name}</li>
+                <li >Buy {item.quantity} in {item.category}</li>
             </ul>
         </div>
     );
