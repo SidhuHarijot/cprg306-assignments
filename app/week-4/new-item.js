@@ -7,7 +7,7 @@ const NewItem = () => {
   const [category, setCategory] = useState('produce');
 
   const handleSubmit = (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const item = {
       name: name,
@@ -25,43 +25,44 @@ const NewItem = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="max-w-lg mx-auto my-8 p-4 shadow-lg bg-gray-800">
       {/* Name Field */}
-      <div>
-        <label htmlFor="name">Name:</label>
+      <div className="mb-4">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-200">Name:</label>
         <input 
           id="name"
-          type="text" 
-          value={name} 
-          onChange={(event) => setName(event.target.value)} 
-          required 
+          type="text"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          required
+          className="mt-1 block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
       </div>
 
       {/* Quantity Field */}
-      <div>
-        <label htmlFor="quantity">Quantity:</label>
+      <div className="mb-4">
+        <label htmlFor="quantity" className="block text-sm font-medium text-gray-200">Quantity:</label>
         <input 
           id="quantity"
-          type="number" 
-          min="1" 
-          max="99" 
+          type="number"
+          min="1"
+          max="99"
           value={quantity}
-          fontcolor="black"
-          onChange={(event) => setQuantity(Number(event.target.value))} 
-          required 
-          class="text-black"
+          onChange={(event) => setQuantity(Number(event.target.value))}
+          required
+          className="mt-1 block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
       </div>
 
       {/* Category Field */}
-      <div>
-        <label htmlFor="category" >Category:</label>
+      <div className="mb-4">
+        <label htmlFor="category" className="block text-sm font-medium text-gray-200">Category:</label>
         <select 
-          id="category" 
-          value={category} 
+          id="category"
+          value={category}
           onChange={(event) => setCategory(event.target.value)}
-          class="text-black">
+          className="mt-1 block w-full p-2 border border-gray-600 bg-gray-700 text-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        >
           <option value="produce">Produce</option>
           <option value="dairy">Dairy</option>
           <option value="bakery">Bakery</option>
@@ -78,7 +79,9 @@ const NewItem = () => {
 
       {/* Submit Button */}
       <button 
-        type="submit" >
+        type="submit"
+        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-800 bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      >
         Submit
       </button>
     </form>
